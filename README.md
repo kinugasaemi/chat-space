@@ -16,14 +16,14 @@
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text|
 |image|string|
 |group_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
 
 ### Association
-- belongs_to: user_id
-- belongs_to: group_id
+- belongs_to: user
+- belongs_to: group
 
 ## groupテーブル
 |Column|Type|Options|
@@ -42,8 +42,8 @@
 |user_id|references|foreign_key: true, null: false|
 
 ###  Association
-- belongs_to: group_id
-- belongs_to: user_id
+- belongs_to: group
+- belongs_to: user
 
 
 This README would normally document whatever steps are necessary to get the
