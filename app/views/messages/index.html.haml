@@ -7,20 +7,17 @@
 			.side-header__box
 				%p.side-header__box__user-name
 					あい
-			%ul.side-header__box__menu
-				%li.side-header__box__menu__new-group
-					=fa_icon 'edit'
-				%li.side-header__box__menu__edit-user
-					=fa_icon 'cog'
+				%ul.side-header__box__menu
+					%li.side-header__box__menu__new-group
+						=fa_icon 'edit'
+					%li.side-header__box__menu__edit-user
+						=fa_icon 'cog'
 		.groups
-			%p.group__group-name
-				テスト１
-			%p.group__latest-message
-				ラストコメント
-			%p.group__group-name
-				テスト2
-			%p.group__latest-message
-				ラストコメント
+			.groups__group
+				%p.groups__group__group-name
+					テスト１
+				%p.groups__group__latest-message
+					ラストコメント
 	
 	.chat-main
 		.main-header
@@ -35,8 +32,8 @@
 						あいみょん２
 					%li.main-header__left-box__member-list__member
 						あい
-				.main-header__edit-btn
-					Edit
+			.main-header__edit-btn
+				Edit
 		.messages
 			.message
 				.message__upper-info
@@ -49,8 +46,7 @@
 		.form
 			%form#new_message.new_message(action="")
 				.input-box
-					%input#message.content.input-box__text(placeholder="type a message" type="text")
-					%label#input-box__image{for: "message-image"}
-						=fa_icon 'image'
-						%input#message-image.input-box__image__file(type="file")
-			%input#submit-btn(type="submit" value="Send" name="commit")
+					%input#new_message.input-box__text(placeholder="type a message" type="text")
+						%label#new_message.input-box__image{for:"message-image"}
+							=fa_icon 'image'
+				%input#submit-btn.submit-btn(type="submit" value="Send" name="commit")
