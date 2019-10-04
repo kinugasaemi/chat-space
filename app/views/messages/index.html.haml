@@ -2,51 +2,51 @@
 
 
 .wrapper
-	.chat-side
-		.side-header
-			.side-header__box
-				%p.side-header__box__user-name
-					あい
-				%ul.side-header__box__menu
-					%li.side-header__box__menu__new-group
-						=fa_icon 'edit'
-					%li.side-header__box__menu__edit-user
-						=fa_icon 'cog'
-		.groups
-			.groups__group
-				%p.groups__group__group-name
-					テスト１
-				%p.groups__group__latest-message
-					ラストコメント
-	
-	.chat-main
-		.main-header
-			.main-header__left-box
-				%h2.main-header__left-box__current-group
-					テスト１
-				%ul.main-header__left-box__member-list
-					Member:
-					%li.main-header__left-box__member-list__member
-						あいみょん
-					%li.main-header__left-box__member-list__member
-						あいみょん２
-					%li.main-header__left-box__member-list__member
-						あい
-			.main-header__edit-btn
-				Edit
-		.messages
-			.message
-				.message__upper-info
-					%p.message__upper-info__talker
-						あい
-					%p.message__upper-info__date
-						2019/09/23(Mon) 12:57:49
-				%p.message__text
-					いい曲
-		.form
-			%form#new_message.new_message(action="")
-				.input-box
-					%input#new_message.input-box__text(placeholder="type a message" type="text")
-						%label#new_message.input-box__image{for:"message-image"}
-							=fa_icon 'image'
-				%input#submit-btn.submit-btn(type="submit" value="Send" name="commit")
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name
+          あい
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__new-group
+            =fa_icon 'edit'
+          %li.side-header__box__menu__edit-user
+            =fa_icon 'cog'
+    .groups
+      .groups__group
+        %p.groups__group__group-name
+          テスト１
+        %p.groups__group__latest-message
+          ラストコメント
+
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group
+          テスト１
+        %ul.main-header__left-box__member-list
+          Member:
+          %li.main-header__left-box__member-list__member
+            あいみょん
+          %li.main-header__left-box__member-list__member
+            あいみょん２
+          %li.main-header__left-box__member-list__member
+            あい
+      .main-header__edit-btn
+        Edit
+    .messages
+      .message
+        .message__upper-info
+          %p.message__upper-info__talker
+            あい
+          %p.message__upper-info__date
+            2019/09/23(Mon) 12:57:49
+        %p.message__text
+          いい曲
+    .form
+      %form#new_message.new_message(action="")
+        .input-box
+          %input#new_message.input-box__text(placeholder="type a message" type="text")
+            %label#new_message.input-box__image{for:"message-image"}
+              =fa_icon 'image'
+        %input#submit-btn.submit-btn(type="submit" value="Send" name="commit")
