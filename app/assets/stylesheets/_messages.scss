@@ -49,7 +49,6 @@
 			font-size: 11px;
 		}
 	}
-
 }
 
 .chat-main{
@@ -59,6 +58,7 @@
 	width: calc(100vw - 300px);
 	float: left;
 }
+
 .main-header{
 	height: 100px;
 	padding: 0 40px;
@@ -98,6 +98,7 @@
 	background-color: #fafafa;
 	overflow: scroll;
 }
+
 .message{
 	padding-bottom: 40px;
 	&__upper-info{
@@ -155,7 +156,7 @@
 		top: 10px;
 		right: 10px;
 		cursor: pointer;
-	 }
+	}
 }
 
 .submit-btn{
