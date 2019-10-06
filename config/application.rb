@@ -16,5 +16,6 @@ module ChatSpace
       g.test_framework false
       g.mailer false
     end
+    config.i18n.default_locale = :ja
   end
 end
