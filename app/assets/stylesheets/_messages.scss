@@ -16,7 +16,6 @@
   width: 300px;
   color: white;
   float: left;
-  position: fixed;
   top: 0;
   .side-header{
     background-color: #253141;
@@ -54,7 +53,6 @@
 }
 
 .chat-main{
-  position: fixed;
   left: 300px;
   top: 0;
   width: calc(100vw - 300px);
