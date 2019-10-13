@@ -6,16 +6,19 @@
           = current_user.name
         %ul.side-header__box__menu
           %li.side-header__box__menu__new-group
-            =fa_icon 'edit'
+            =link_to new_group_path do
+              =fa_icon 'pencil-square-o', class: 'edit'
           %li.side-header__box__menu__edit-user
             =link_to edit_user_path(current_user) do
               =fa_icon 'cog', class: 'icon'
     .groups
       .groups__group
-        %p.groups__group__group-name
-          テスト１
-        %p.groups__group__latest-message
-          ラストコメント
+        - current_user.groups.each do |group|
+          =link_to '#' do
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません。
 
   .chat-main
     .main-header
@@ -41,6 +44,14 @@
             2019/09/23(Mon) 12:57:49
         %p.message__text
           いい曲
+        .message__upper-info
+          %p.message__upper-info__talker
+            あい6
+          %p.message__upper-info__date
+            2019/09/23(Mon) 12:57:49
+        %p.message__text
+          いい曲?
+          
     .form
       %form#new_message.new_message(action="")
         .input-box

@@ -31,6 +31,10 @@
       font-weight: bold;
       &__menu{
         display: flex;
+        a{
+          color: #dddddd;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -41,9 +45,14 @@
     overflow: scroll;
     &__group{
       margin-bottom: 40px;
+      a{
+        color: #dddddd;
+        text-decoration: none;
+      }
       &__group-name{
         margin-bottom: 5px;
         font-size: 15px;
+        
       }
       &__group-latest-message{
         font-size: 11px;
@@ -90,7 +99,8 @@
   }
   .messages{
     width: calc(100vw - 300px);
-    height: calc(100% - 190px);
+    box-sizing: border-box;
+    height: calc(100% - 100px - 90px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
@@ -162,6 +172,3 @@
     }
   }
 }
-
-
-
