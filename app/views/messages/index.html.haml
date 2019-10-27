@@ -1,27 +1,61 @@
 .wrapper
-  =render 'shared/side_bar',layout: 'application'
+  .chat-side
+    .side-header
+      .side-header__box
+        %h3.side-header__box__user-name
+          = current_user.name
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__new-group
+            =link_to new_group_path do
+              =fa_icon 'pencil-square-o', class: 'edit'
+          %li.side-header__box__menu__edit-user
+            =link_to edit_user_path(current_user) do
+              =fa_icon 'cog', class: 'icon'
+    .groups
+      .groups__group
+        - current_user.groups.each do |group|
+          =link_to '#' do
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません。
 
   .chat-main
     .main-header
       .main-header__left-box
         %h2.main-header__left-box__current-group
-          = @group.name
+          テスト１
         %ul.main-header__left-box__member-list
           Member:
-          - @group.users.each do |user|
-            %li.main-header__left-box__member
-              =user.name
+          %li.main-header__left-box__member-list__member
+            あいみょん
+          %li.main-header__left-box__member-list__member
+            あいみょん２
+          %li.main-header__left-box__member-list__member
+            あい
       .main-header__edit-btn
-        = link_to 'Edit', edit_group_path(@group.id)
+        Edit
     .messages
-      = render @messages
-
+      .message
+        .message__upper-info
+          %p.message__upper-info__talker
+            あい
+          %p.message__upper-info__date
+            2019/09/23(Mon) 12:57:49
+        %p.message__text
+          いい曲
+        .message__upper-info
+          %p.message__upper-info__talker
+            あい6
+          %p.message__upper-info__date
+            2019/09/23(Mon) 12:57:49
+        %p.message__text
+          いい曲?
           
     .form
-      = form_for [@group, @message] do |f|
+      %form#new_message.new_message(action="")
         .input-box
-          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
-          = f.label :image, class: 'input-box__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'input-box__image__file'
-        = f.submit 'Send', class: 'submit-btn'
+          %input#new_message.input-box__text(placeholder="type a message" type="text")
+            %label#new_message.input-box__image{for:"message-image"}
+              =fa_icon 'image'
+        %input#submit-btn.submit-btn(type="submit" value="Send" name="commit")
