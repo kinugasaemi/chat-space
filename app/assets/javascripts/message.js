@@ -1,12 +1,14 @@
 $(function(){ 
 	function buildHTML(message){
 
+
 	 if ( message.image ) {
 		 image = `<img src="${message.image}">`
 	 }
 	 else {
 		 image = " "
 	 } 
+
 		 var html =
 			`<div class="message" data-message-id=${message.id}>
 				 <div class="upper-message">
