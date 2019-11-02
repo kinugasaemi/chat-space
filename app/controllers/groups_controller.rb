@@ -1,7 +1,10 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only:[:edit, :update]
   def index
   end
-
+  def edit
+    @group=Group.find(params[:id])
+  end
   #groupのnewページでグループ情報を登録。
   def new
     @group = Group.new
@@ -39,6 +42,4 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  def edit
-  end
 end
