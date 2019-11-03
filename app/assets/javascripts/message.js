@@ -49,9 +49,7 @@ $(function(){
    if (window.location.href.match(/\/groups\/\d+\/messages/)){
      //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
      var last_message_id = $('.message:last').data("message-id");
-     console.log(last_message_id);
      var group_id = $(".current-group").data("group-id");
-     console.log(group_id);
      $.ajax({
        //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
        url: "api/messages",
@@ -74,8 +72,7 @@ $(function(){
        });
      })
      .fail(function() {
-      
-       console.log('error');
+       alert('error');
      });
    }
  };
